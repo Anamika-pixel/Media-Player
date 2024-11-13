@@ -1,0 +1,48 @@
+/* #links{
+    margin-left: 150px;
+    line-height: 2;
+}
+#link-to-pages{
+    text-decoration: none;
+    color: white;
+}
+#guides{
+    margin-left: 100px;
+    line-height: 2;
+}
+#contact{
+    margin-left: 100px;
+}
+#textfield1{
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+}
+#btn{
+    background-Color:#FF4162;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+#rightarrow{
+    color: white;
+}
+#logos{
+    margin-left: 30px;
+    color: white;
+}
+#copyright{
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+      */
+#player{
+    font-family: "PT Serif", serif;
+    color: #fff;
+} 
+
+.color-bg{
+    background-color: rgb(136, 32, 248);
+}
+
