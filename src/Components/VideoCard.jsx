@@ -1,14 +1,14 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { deleteVedio, saveHistory } from '../services/allAPI';
 
 
 
 
-function VideoCard({displayData,setDeleteResponse}) {
+function VideoCard({displayData,setDeleteResponse ,insideCategory}) {
 
   const [show, setShow] = useState(false);
 
@@ -51,16 +51,27 @@ function VideoCard({displayData,setDeleteResponse}) {
   }
 
 
+  const dragStarted=(e,vedioId)=>{
+    console.log(`Dragging Started with  id ${vedioId}`);
+    e.dataTransfer.setData("vedioId" , vedioId)
+    
+  }
+
 
   return (
     <>
-      <Card>
+      <Card draggable={true} onDragStart={(e)=>dragStarted(e,displayData?.id)}> 
         <Card.Img onClick={handleShow} style={{height:'200px'}} variant="top" src={displayData?.imageUrl} />
         <Card.Body className='d-flex align-items-center justify-content-center'>
           
               <h5>{displayData?.caption}</h5>
-              <button onClick={()=>handleRemoveVedio(displayData?.id)} className='btn'><i class="fa-solid fa-trash" style={{color: "#ff0000" , fontSize:'20px'}}></i></button>
 
+{
+  !insideCategory &&
+
+  <button onClick={()=>handleRemoveVedio(displayData?.id)} className='btn'><i class="fa-solid fa-trash" style={{color: "#ff0000" , fontSize:'20px'}}></i></button>
+
+}
         </Card.Body>
       </Card>
 

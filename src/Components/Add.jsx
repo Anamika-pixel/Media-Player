@@ -51,6 +51,7 @@ function Add({setAddVedioResponse}) {
           console.log(result);
           if (result.status>=200 && result.status<300) {
 
+            setVedioDetails({ caption: '', imageUrl: '', youtubeUrl: '' })
             toast.success(`${result.data.caption} added to your collection`)
             handleClose()
             
@@ -130,12 +131,6 @@ function Add({setAddVedioResponse}) {
       </Modal>
 
 
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        theme="light"
-        
-/>
 
 
     </>
